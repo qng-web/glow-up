@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffeef3;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f48fb1;
+            color: white;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+        }
+        .search-bar input {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #f06292;
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        .search-bar button:hover {
+            background-color: #ec407a;
+        }
+        nav {
+            background-color: #f06292;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 10px;
+            display: block;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            padding: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            list-style: none;
+            min-width: 150px;
+        }
+        nav ul li ul li a {
+            color: #333;
+            padding: 8px 15px;
+        }
+        nav ul li:hover ul {
+            display: block;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .country {
+            margin-bottom: 30px;
+        }
+        .country h2 {
+            color: #f06292;
+            border-bottom: 2px solid #f06292;
+            padding-bottom: 5px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .brand img {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        .brand h3 {
+            color: #555;
+            margin: 0;	
+        }
+        .brand p {
+            margin: 5px 0;
+        }
+        .brand a {
+            text-decoration: none;
+            color: #ec407a;
+        }
+        .brand a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #f48fb1;
+            color: white;
+            margin-top: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Glow Up</h1>
+        <p>Nơi chia sẻ cảm nhận về các thương hiệu mỹ phẩm</p>
+    </header>
+
+    <!-- Thanh điều hướng -->
+    <nav>
+        <ul>
+            <li><a href="#vietnam">Việt Nam</a>
+                <ul>
+                    <li><a href="#vietnam">Cocoon</a></li>
+                    <li><a href="#vietnam">Dr. Ceutics</a></li>
+                    <li><a href="#vietnam">Ofélia</a></li>
+					<li><a href="#vietnam">Lemonade</a></li>
+                </ul>
+            </li>
+            <li><a href="#korea">Hàn Quốc</a>
+                <ul>
+                    <li><a href="#korea">Torriden</a></li>
+                    <li><a href="#korea">Skin1004</a></li>
+                    <li><a href="#korea">Clio</a></li>
+                </ul>
+            </li>
+            <li><a href="#china">Trung Quốc</a>
+                <ul>
+                    <li><a href="#china">Colorkey</a></li>
+                    <li><a href="#china">Olay</a></li>
+                    <li><a href="#china">Carslan</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Thanh tìm kiếm -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm, thương hiệu...">
+        <button onclick="searchProducts()">Tìm kiếm</button>
+    </div>
+
+    <!-- Thân trang -->
+    <div class="content">
+        <!-- Việt Nam -->
+        <div id="vietnam" class="country">
+            <h2>Việt Nam</h2>
+            <div class="brand">
+                <img src="Cocoon.png" alt="Cocoon">
+                <div>
+                    <h3>Cocoon</h3>
+                    <p>Cocoon là một trong những hãng mỹ phẩm Việt được yêu thích nhất. Tên của thương hiệu lấy cảm hứng từ từ Tiếng Anh “cocoon” có nghĩa là cái kén, nơi ôm ấp, chăm sóc con tằm để khi đủ ngày tháng sẽ hóa thân thành nàng bướm xinh đẹp.</p>
+                    <a href="https://cocoonvietnam.com/">Xem chi tiết</a>
+                </div>
+            </div>
+            <div class="brand">
+                <img src="Dr.Ceutics.png" alt="Dr.Ceutics">
+                <div>
+                    <h3>Dr.Ceutics</h3>
+                    <p>Dr. Ceutics là thương hiệu dược mỹ phẩm Việt Nam chuyên cung cấp các sản phẩm chăm sóc da chất lượng cao, đặc biệt tập trung vào làn da nhạy cảm và da mụn. Thương hiệu kết hợp giữa công nghệ hiện đại và các thành phần an toàn, được kiểm nghiệm lâm sàng để đảm bảo hiệu quả và phù hợp với làn da người Việt.</p>
+                    <a href="https://drceutics.vn/">Xem chi tiết</a>
+                </div>
+            </div>
+            <div class="brand">
+                <img src="Ofélia.png" alt="Ofélia">
+                <div>
+                    <h3>Ofélia</h3>
+                    <p>Ofélia là một thương hiệu mỹ phẩm nổi tiếng của Hàn Quốc, được nhiều người biết đến với các sản phẩm trang điểm chất lượng và thiết kế bắt mắt. Mặc dù có tên nghe giống phong cách phương Tây, nhưng thương hiệu này đã gây ấn tượng mạnh tại thị trường châu Á, đặc biệt là Việt Nam.</p>
+                    <a href="https://ofelia.vn/">Xem chi tiết</a>
+                </div>
+            </div>
+			<div class="brand">
+                <img src="Lemonade.png" alt="Lemonade">
+                <div>
+                    <h3>Lemonade</h3>
+                    <p> Lemonade là thương hiệu mỹ phẩm Việt Nam do Quách Ánh sáng lập năm 2018, nổi bật với các sản phẩm trang điểm phù hợp với làn da và phong cách phụ nữ Việt. Lemonade đang dần khẳng định vị thế trong ngành mỹ phẩm nội địa.</p>
+                    <a href="https://www.lemonade.vn/">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hàn Quốc -->
+        <div id="korea" class="country">
+            <h2>Hàn Quốc</h2>
+            <div class="brand">
+                <img src="Torriden.png" alt="Torriden">
+                <div>
+                    <h3>Torriden</h3>
+                    <p>Torriden là một thương hiệu mỹ phẩm hàng chăm sóc da đến từ Hàn Quốc, hoạt động theo triết lý “làn da của bạn là hành tinh của chúng tôi". Các sản phẩm của hãng không chỉ chăm sóc da đơn thuần mà còn giúp nâng cao vẻ đẹp tự nhiên của làn da từ bên trong ra ngoài. Phù hợp với da dầu và da hỗn hợp.</p>
+                    <a href="https://torriden.com">Xem chi tiết</a>
+                </div>
+            </div>
+            <div class="brand">
+                <img src="Skin1004.png" alt="Skin1004">
+                <div>
+                    <h3>Skin1004</h3>
+                    <p>Tinh chất rau má SKIN1004 đến từ thương hiệu SKIN1004 nổi tiếng tại Hàn Quốc. Là một thương hiệu được biết đến với đa dạng các sản phẩm như sữa rửa mặt, nước hoa hồng, kem chống nắng,..</p>
+                    <a href="https://skin1004korea.com">Xem chi tiết</a>
+                </div>
+            </div>
+            <div class="brand">
+                <img src="Clio.png" alt="Clio">
+                <div>
+                    <h3>Clio</h3>
+                    <p> Clio Kill Cover Founwear là một trong những dòng sản phẩm cushion, kem nền có khả năng che phủ cực đỉnh của thương hiệu Clio. Các sản phẩm đều được trang bị công thức che phủ - chống nhòe – chống lem trôi cấp độ cao giúp bạn dễ dàng duy trì lớp nền mịn mượt, lâu trôi cả ngày dài.</p>
+                    <a href="https://www.cliocosmetic.com">Xem chi tiết</a>
+                </div>
+            </div>
+			<div class="brand">
+                <img src="Blackrouge.png" alt="Blackrouge">
+                <div>
+                    <h3>Blackrouge</h3>
+                    <p>Black Rouge là một thương hiệu mỹ phẩm đến từ Hàn Quốc, nổi tiếng với các dòng son môi đa dạng và chất lượng. Thương hiệu này tập trung vào sự cá nhân hóa và thể hiện phong cách riêng của người dùng.</p>
+                    <a href="https://blackrouge.com.vn/?srsltid=AfmBOooJicPuzAjeHbImdi4Bnv4YHjRyjlmaBvgceTBR0mnDXHxqZ0G1">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+		
+
+        <!-- Trung Quốc -->
+        <div id="china" class="country">
+            <h2>Trung Quốc</h2>
+            <div class="brand">
+                <img src="Colorkey.png" alt="Colorkey">
+                <div>
+                    <h3>Colorkey</h3>
+                    <p>Sản phẩm mặt nạ Colorkey chứa các thành phần chính gồm: Aqua, Glycerin, provitamin B5,  Isopentyldiol, Trehalose, Panthenol, Niacinamide,... các thành phần này giúp dưỡng ẩm giữ nước cho da, làm sáng da và làm dịu các làn da đang bị kích ứng hoặc tổn thương. Kết hợp với các thành phần tự nhiên từ cây cam thảo, hoa cây phỉ Bắc Mỹ chống oxy hóa giúp da căng khỏe.</p>
+                    <a href="https://jp.colorkey.com/?srsltid=AfmBOooZM77Q0LJqurAiL3naBotmXjhNg-RcLiJUZTH0qPdAdFx_LCXu">Xem chi tiết</a>
+                </div>
+            </div>
+            <div class="brand">
+                <img src="Olay.png" alt="Olay">
+                <div>
+                    <h3>Olay</h3>
+                    <p>Dưỡng thể Olay B3 Retinol là sản phẩm chăm sóc da toàn thân với công thức đặc biệt chứa các Retinol và Niacinamide. Sản phẩm giúp cải thiện độ đàn hồi, sáng mịn và đều màu da, đồng thời bảo vệ da chống lão hóa, khỏi các tác nhân gây hại từ môi trường.</p>
+                    <a href="https://www.olay.com/?srsltid=AfmBOooAZRqKNz5rgc0edECWbiQIcV8N6wdewYT2_hij2piaREMl-_oE">Xem chi tiết</a>
+                </div>
+            </div>
+            <div class="brand">
+                <img src="Carslan.png" alt="Carslan">
+                <div>
+                    <h3>Carslan</h3>
+                    <p>Carslan là một thương hiệu nội địa Trung , cực kỳ nổi tiếng trong giới làm đẹp, được nhiều người và các beauty blogger tin dùng. Nhắc đến sản phẩm hot của hãng chắc chắn không thể bỏ qua kem nền, phấn phủ,...</p>
+                    <a href="https://www.carslan.com/?srsltid=AfmBOoqd2xlwJqsdjZhfJrj5sSMFF0e9DPT2kQqG1nFf2MtQ2w7WGgHi">Xem chi tiết</a>
+                </div>
+            </div>
+			<div class="brand">
+                <img src="Flower Knows.png" alt="Flower Knows">
+                <div>
+                    <h3>Flower Knows</h3>
+                    <p>Flower Knows là một thương hiệu mỹ phẩm đến từ Trung Quốc, nổi tiếng với phong cách thiết kế cổ tích, ngọt ngào và sang trọng. Các sản phẩm của hãng thường được lấy cảm hứng từ nghệ thuật châu Âu, đặc biệt là phong cách Rococo và Baroque, với bao bì tinh xảo, đầy tính nghệ thuật.</p>
+                    <a href="https://flowerknows.co/?srsltid=AfmBOoq2PEuZeDuRQoTcCKCRpAWD_1kZMj8FuvL1VnZXZTJPXV4ODJkB">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chân trang -->
+    <footer>
+        <p> MỌI CHI TIẾT THẮC MẮC LIÊN HỆ :</p>
+<p>		Phan Thị Quỳnh Nga - 12TH</p>
+<p>		Ngô Bảo Trân - 12TH</p>
+<p>		Phạm Lê Minh Thư - 12TH</p>
+<p>		Phạm Ngọc Minh Châu  - 12TH</p>
+    </footer>
+
+    
+</body>
+</html>
